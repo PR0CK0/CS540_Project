@@ -1,6 +1,12 @@
 # CS540_Project
 For Professor Lehr, ERAU Daytona Spring 2021. Finding the elevation of each parcel in Volusia County FL, using GIS.
 
+Uses a few GIS functions to determine the nearest contour line on the map, and thereby deduce a "parcel's elevation". Initial efforts were with ST_Intersects, ST_Project, ST_MakePoint, ST_InterpolatePoint and so forth; the idea then was to cast out a ray in each cardinal directions from the centroid of a given parcel, and from these rays find all intersections with contour lines, then pick the closest intersecting contour line and choose it as the parcel's height. This was functional but vastly complex (on the order of quintuply-nested GIS function calls) for each direction (N, E, S, W)... 
+
+So I thought about it some more, and ended up reducing all the effort to a simple call of ST_Distance, feeding the function parcel centroids and all contour lines in the zip codes 32114 and 32118. This is output into a table called contours_analysis. With this table, and parids in it, we can map to whatever we want, specifically sales_analysis. So now we can perform some sales analysis with respect to parcel elevation.
+
+*The general assumption is that a higher elevation indicates more property value (because of the flood-resistance and impossibility of garbage swamp land); but this is likely untrue for beachfront properties, which are generally right at sea-level and cost a ton.
+
 ## Step 1 - Getting the Elevation/Contour Data
 Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught. There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
@@ -21,3 +27,5 @@ Download the .sql file and run the queries one after another. It's commented. NO
 * The first query will take about 15m
 * The second query will take at least an hour, even though it's just a simple column addition to sales_analysis, because our sales_analysis tables are massive
 * The last query will take ...
+
+That's it. It's rather straightforward.
