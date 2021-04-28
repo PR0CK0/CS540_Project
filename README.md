@@ -25,9 +25,11 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
 ## Step 2 - Queries
-Download the .sql file and run the queries one after another. It's commented. NOTE: You don't have to run the first query if you only care about the zip codes 32114 and 32118... otherwise, you have to re-run the queries yourself.
+Download the .sql file and run the queries one after another. It's commented. 
 * The first query will take about 15m
 * The second query will take about half a second
 * The last query will take ...
+
+NOTE: If you only care about the ZIP codes 32114 and 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
 That's it. It's rather straightforward.
