@@ -7,6 +7,8 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 
 *The general assumption is that a higher elevation indicates more property value (because of the flood-resistance and impossibility of garbage swamp land); but this is likely untrue for beachfront properties, which are generally right at sea-level and cost a ton.*
 
+![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
+
 ## Step 1 - Getting the Elevation/Contour Data
 Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught. There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
