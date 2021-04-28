@@ -2,7 +2,7 @@
 For Professor Lehr, ERAU Daytona Spring 2021. Finding the elevation of each parcel in Volusia County FL, using GIS.
 
 ## Step 1 - Getting the Elevation/Contour Data
-Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught. There are some ways to get the contours into your SQL server, but since we already have QGIS open, follow these steps:
+Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught. There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
 * Click the Processing tab up top
 * Click Toolbox
