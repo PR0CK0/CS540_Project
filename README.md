@@ -27,7 +27,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 ## Step 2 - Queries
 Download the .sql file and run the queries one after another. It's commented. NOTE: You don't have to run the first query if you only care about the zip codes 32114 and 32118... otherwise, you have to re-run the queries yourself.
 * The first query will take about 15m
-* The second query will take at least an hour, even though it's just a simple column addition to sales_analysis, because our sales_analysis tables are massive
+* The second query will take several hours, even though it's just a simple column addition to sales_analysis, because our sales_analysis tables are massive
 * The last query will take ...
 
 That's it. It's rather straightforward.
