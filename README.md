@@ -14,7 +14,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Leave the table name blank, it will default to "contours"
 * Don't touch anything else
 * Scroll down and click Run
-* Go to PGAdmin and refresh the schema; the contours table should be there
+* Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
 ## Step 2 - Queries
 Download the .sql file and run the queries one after another. It's commented.
