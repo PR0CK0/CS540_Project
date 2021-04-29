@@ -38,3 +38,7 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
 That's it. It's rather straightforward.
+
+## Step 3 - Visualizing in QGIS
+* (If you're reading this, I'm gonna do it, just taking a break for tonight) Add the geom column to the parcel table or vice versa so you can add a postgis layer to display the elevation number with.
+* Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select what you just made. Right click the layer, go to properties. On Symbology do Graduated. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. 
