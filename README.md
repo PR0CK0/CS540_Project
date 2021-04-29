@@ -14,7 +14,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
 
 ## Step 1 - Getting the Elevation/Contour Data
-If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. Otherwise, read on.
+If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. If you did this, skip to Step 2. Otherwise, read on.
 
 Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught (new vector layer). There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
