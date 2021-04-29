@@ -3,6 +3,8 @@
 
 For Professor Lehr, ERAU Daytona Spring 2021. 
 
+[Here's](https://github.com/Psychobagger/CS540_Project/blob/main/PROCKOT_CS540_volusia_county_elevations_gis.pdf) the PDF file
+
 ## **Finding the elevation of each parcel in Volusia County FL, using GIS.**
 
 Uses a few GIS functions to determine the nearest contour line on the map, and thereby deduce a "parcel's elevation". Initial efforts were with ST_Intersects, ST_Project, ST_MakePoint, ST_InterpolatePoint and so forth; the idea then was to cast out a ray in each cardinal direction from the centroid of a given parcel, and from these rays find all intersections with contour lines, then pick the closest intersecting contour line and choose it as the parcel's height. This was functional but vastly complex (on the order of quintuply-nested GIS function calls) for each direction (N, E, S, W)... 
