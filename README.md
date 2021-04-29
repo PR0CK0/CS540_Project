@@ -30,8 +30,10 @@ Download the .sql file and run the queries one after another in PGAdmin *if you 
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
 * The first query will take about 15 minutes
-* The second query will take about half a second
-* The last query will take afeafagagaefgfsfdghdhgtghtrehngrthyreghnjfhtdefghd
+* The second query will take about ten seconds
+* The third query will take about half a second
+* The last query will take about a minute
+* Total time of queries (for my PC and for just two ZIP codes): about 20 minutes
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
