@@ -68,4 +68,4 @@ Unfortunately, the GIS representation is rather sparse. This is because, for wha
 * And run this: `update volusia.parcel_elev a set geom = p.geom from volusia.gis_parcels p where a.parid=p.altkey;`
 * Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select parcel_elev. Right click the layer, go to properties. On Symbology do Graduated, for the symbol 'parcel_elevation'. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. You can specify a color graduation so it blends. 
 
-![QGIS map finished](https://github.com/Psychobagger/CS540_Project/blob/main/media/gis.PNG)
+![QGIS map finished](https://github.com/Psychobagger/CS540_Project/blob/main/media/gis2.PNG)
