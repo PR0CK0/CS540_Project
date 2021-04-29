@@ -14,6 +14,8 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
 
 ## Note
+**ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... ALL OTHERS IGNORED FOR TIME. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
+
 I am going to lay out the process of doing this IN FULL, i.e. running all the queries. If you don't want to do any of that, the absolute simplest way is to:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
