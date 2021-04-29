@@ -16,7 +16,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ## Note
 **ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... ALL OTHERS IGNORED FOR TIME. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
 
-I am going to lay out the process of doing this IN FULL, i.e. running all the queries. If you don't want to do any of that, the absolute simplest way is to:
+If you don't care about other zip codes or running queries, the absolute simplest way is to:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
 * Import this csv to the volusia schema
