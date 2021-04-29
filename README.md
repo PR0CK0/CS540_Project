@@ -64,6 +64,7 @@ That's it. It's rather straightforward.
 Recall: you can do this right from the "easy method", skipping steps 2 and 3.
 
 * You have to have a geom column in the parcel_elev table to be able to represent it in QGIS
+* If you're using it with your own parcel table (not my parcel_elev), then just replace the following 'parcel_elevs' with 'parcel'
 * Run the following: `select AddGeometryColumn ('volusia', 'parcel_elev', 'geom', 2236, 'MULTIPOLYGON', 2);`
 * And run this: `update volusia.parcel_elev a set geom = p.geom from volusia.gis_parcels p where a.parid=p.altkey;`
 * Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select parcel_elev. Right click the layer, go to properties. On Symbology do Graduated, for the symbol 'parcel_elevation'. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. You can specify a color graduation so it blends. 
