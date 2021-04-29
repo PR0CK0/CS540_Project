@@ -17,7 +17,8 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 * **ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... all others ignored for time. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
 * **ENSURE YOU SWITCH TO 'IMPORT' (NOT EXPORT) WHEN IMPORTING A CSV FOR A TABLE, THEN CHECK 'HEADER' SO THE COLUMN NAMES ARE IMPORTED TOO**
 
-If you don't care about other zip codes or running queries, the absolute simplest way is to:
+## Easy Method
+If you only care about ZIP codes 32114 and 32118, just do the following:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
 * PGAdmin makes you create a table first, so run [this create table statement in your volusia schema](https://github.com/Psychobagger/CS540_Project/blob/main/create_table.sql)
