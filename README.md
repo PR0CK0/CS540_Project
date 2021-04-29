@@ -30,6 +30,6 @@ Download the .sql file and run the queries one after another. It's commented.
 * The second query will take about half a second
 * The last query will take ...
 
-NOTE: If you only care about the ZIP codes 32114 and 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
+NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
 That's it. It's rather straightforward.
