@@ -1,4 +1,4 @@
--- RUN THIS ENTIRE THING FIRST --
+-- RUN THIS QUERY FIRST --
 -- Makes the contours_analysis table, finds all distances from parcel centroids to all contour lines
 select s.parid,
 ST_Distance(
