@@ -14,14 +14,14 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
 
 ## Note
-**ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... ALL OTHERS IGNORED FOR TIME. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
+* **ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... all others ignored for time. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
+* **ENSURE YOU SWITCH TO IMPORT (NOT EXPORT) WHEN IMPORTING A CSV FOR A TABLE
 
 If you don't care about other zip codes or running queries, the absolute simplest way is to:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
-* PGAdmin makes you create a table first, so run this `create table volusia.parcel_elev
-(parid double precision, taxyr double precision, rolltype text, acctype text, dorid text, alt_id text, luc text, luc_desc text, taxdist text, taxdist_desc text, nbhd text, nbhd_desc text, mararea text, mararea_desc text, aprland double precision, aprbldg double precision, aprtot double precision, newconst double precision, additions double precision, deletions double precision, sasd double precision, nsasd double precision, stxbl double precision, nstxbl double precision, cotxbl double precision, citxbl double precision, cra text, cur text, dtcreated text, naics text, naics_desc text, eqval double precision, penval double precision, livunit text, hx_flag text, parcel_elevation integer);`
-* Import this csv to the volusia schema
+* PGAdmin makes you create a table first, so run [this create table statement in your volusia schema](https://github.com/Psychobagger/CS540_Project/blob/main/create_table.sql)
+* Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header; now import it
 * Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
 * Done
 
