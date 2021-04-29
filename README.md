@@ -10,7 +10,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
 
 ## Step 1 - Getting the Elevation/Contour Data
-Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught. There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
+Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught (new vector layer). There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
 * Click the Processing tab up top
 * Click Toolbox
