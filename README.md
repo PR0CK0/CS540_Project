@@ -31,7 +31,7 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 
 * The first query will take about 15 minutes
 * The second query will take about half a second
-* The last query will take an hour or so (joining all of the elevations to the parcel rows means SQL must re-write every single row... very dumb but I could not find a workaround)
+* The last query will take FUCK FUCK FUCKFUFJFDFDJIFRAIFENRFAJMFGUGRBNAIEFMF
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
