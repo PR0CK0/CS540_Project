@@ -1,4 +1,5 @@
 # CS540_Project
+**Tyler Procko**
 For Professor Lehr, ERAU Daytona Spring 2021. Finding the elevation of each parcel in Volusia County FL, using GIS.
 
 Uses a few GIS functions to determine the nearest contour line on the map, and thereby deduce a "parcel's elevation". Initial efforts were with ST_Intersects, ST_Project, ST_MakePoint, ST_InterpolatePoint and so forth; the idea then was to cast out a ray in each cardinal directions from the centroid of a given parcel, and from these rays find all intersections with contour lines, then pick the closest intersecting contour line and choose it as the parcel's height. This was functional but vastly complex (on the order of quintuply-nested GIS function calls) for each direction (N, E, S, W)... 
@@ -33,7 +34,7 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 * The second query will take about ten seconds
 * The third query will take about half a second
 * The last query will take about a minute
-* _Total time of queries (for my PC and for just two ZIP codes): about 20 minutes_
+* ***Total time of queries (for my PC and for just two ZIP codes): about 20 minutes***
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last three queries (or, again, just download my parcel_elev zip and put that table in PGAdmin... saves some time).
 
