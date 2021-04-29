@@ -31,7 +31,7 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 
 * The first query will take about 15 minutes
 * The second query will take about half a second
-* The last query will take FUCK FUCK FUCKFUFJFDFDJIFRAIFENRFAJMFGUGRBNAIEFMF
+* The last query will take afeafagagaefgfsfdghdhgtghtrehngrthyreghnjfhtdefghd
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
