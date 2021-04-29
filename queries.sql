@@ -1,11 +1,11 @@
 -- RUN THIS QUERY FIRST --
 -- IF YOU HAVE the contours_analysis2 table, you can skip this query and start at the third query
 -- Makes the contours_analysis table, finds all distances from parcel centroids to all contour lines
-select s.parid,
+select gp.altkey as parid,
 ST_Distance(
   ST_Centroid(
     ST_Transform(
-      s.geom, 2236
+      gp.geom, 2236
     )
   ), 
   ST_Transform(
@@ -14,10 +14,10 @@ ST_Distance(
 ) as parcel_elevation_contour_distance,		 
 c.elev
 into volusia.contours_analysis
-from volusia.sales_analysis s, volusia.contours c
+from volusia.gis_parcels gp, volusia.contours c, volusia.situs s
 
--- Update the zipcodes here to the ones you care about, or remove it to do ALL of volusia (will take forever)
-where c.geom is not null and (s.zip1 ilike '32114' or s.zip1 ilike '32118');
+-- Update the zipcodes here to the ones you care about, or remove the ZIP code statements to do ALL of volusia (will take forever)
+where s.parid = gp.altkey and (s.zip1 ilike '32114' or s.zip1 ilike '32118');
 -- END FIRST QUERY --
 
 
