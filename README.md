@@ -25,10 +25,13 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
 ## Step 2 - Queries
-Download the .sql file and run the queries one after another in PGAdmin. It's commented. 
-* The first query will take about 15m
+Download the .sql file and run the queries one after another in PGAdmin *if you want to* - the SQL file is commented. An easier way is to download my parcel table (called parcel_elev.txt), put it in your volusia schema and you have all of the elevation numbers. You'll basically duplicate your own parcel table, but it saves you hours of query time.
+
+The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
+
+* The first query will take about 15 minutes
 * The second query will take about half a second
-* The last query will take ...
+* The last query will take an hour or so
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run the first query. Just download the contours_analysis table, put it in the volusia schema, and do the last two queries.
 
