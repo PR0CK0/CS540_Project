@@ -25,7 +25,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
 ## Step 2 - Queries
-Download the .sql file and run the queries one after another. It's commented. 
+Download the .sql file and run the queries one after another in PGAdmin. It's commented. 
 * The first query will take about 15m
 * The second query will take about half a second
 * The last query will take ...
