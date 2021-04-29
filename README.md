@@ -61,5 +61,7 @@ NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't ha
 That's it. It's rather straightforward.
 
 ## Step 3 - Visualizing in QGIS
-* (If you're reading this, I'm gonna do it, just taking a break for tonight) Add the geom column to the parcel table or vice versa so you can add a postgis layer to display the elevation number with.
-* Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select what you just made. Right click the layer, go to properties. On Symbology do Graduated. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. 
+* You have to have a geom column in the parcel_elev table to be able to represent it in QGIS
+* Run the following 'select AddGeometryColumn ('volusia', 'parcel_elev', 'geom', 2236, 'MULTIPOLYGON', 2);'
+* And run this 'update volusia.parcel_elev a set geom = p.geom from volusia.gis_parcels p where a.parid=p.altkey;'
+* Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select parcel_elev. Right click the layer, go to properties. On Symbology do Graduated, for the symbol 'parcel_elevation'. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. You can specify a color graduation so it blends. 
