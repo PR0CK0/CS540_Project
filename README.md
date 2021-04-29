@@ -61,8 +61,6 @@ NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't ha
 That's it. It's rather straightforward.
 
 ## Step 3 - Visualizing in QGIS
-Unfortunately, the GIS representation is rather sparse. This is because, for whatever reason
-
 * You have to have a geom column in the parcel_elev table to be able to represent it in QGIS
 * Run the following: `select AddGeometryColumn ('volusia', 'parcel_elev', 'geom', 2236, 'MULTIPOLYGON', 2);`
 * And run this: `update volusia.parcel_elev a set geom = p.geom from volusia.gis_parcels p where a.parid=p.altkey;`
