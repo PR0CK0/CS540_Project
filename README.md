@@ -25,7 +25,7 @@ If you don't care about other zip codes or running queries, the absolute simples
 * Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
 * Done
 
-Now we go onto the detailed steps of reproducing my work...
+Now we go onto the detailed steps of reproducing my work... remember, you don't have to do this unless you want other ZIP codes.
 
 ## Step 1 - Getting the Elevation/Contour Data
 If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. If you did this, skip to Step 2. Otherwise, read on.
