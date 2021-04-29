@@ -1,4 +1,5 @@
 -- RUN THIS QUERY FIRST --
+-- IF YOU HAVE the contours_analysis2 table, you can skip this query and start at the third query
 -- Makes the contours_analysis table, finds all distances from parcel centroids to all contour lines
 select s.parid,
 ST_Distance(
@@ -22,6 +23,7 @@ where c.geom is not null and (s.zip1 ilike '32114' or s.zip1 ilike '32118');
 
 
 -- RUN THIS SECOND --
+-- IF YOU HAVE the contours_analysis2 table, you can skip this query and start at the third query
 -- Makes the contours_analysis2 table, just has one parid corresponding to the closest elevation
 select ca.parid, ca.elev
 into volusia.contours_analysis2
