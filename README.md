@@ -19,6 +19,8 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 If you don't care about other zip codes or running queries, the absolute simplest way is to:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
+* PGAdmin makes you create a table first, so run this `create table volusia.parcel_elev
+(parid double precision, taxyr double precision, rolltype text, acctype text, dorid text, alt_id text, luc text, luc_desc text, taxdist text, taxdist_desc text, nbhd text, nbhd_desc text, mararea text, mararea_desc text, aprland double precision, aprbldg double precision, aprtot double precision, newconst double precision, additions double precision, deletions double precision, sasd double precision, nsasd double precision, stxbl double precision, nstxbl double precision, cotxbl double precision, citxbl double precision, cra text, cur text, dtcreated text, naics text, naics_desc text, eqval double precision, penval double precision, livunit text, hx_flag text, parcel_elevation integer);`
 * Import this csv to the volusia schema
 * Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
 * Done
