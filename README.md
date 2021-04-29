@@ -36,7 +36,7 @@ Download the .sql file and run the queries one after another in PGAdmin - the SQ
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
 * The first query will take about 15 minutes
-* The second query will take about ten seconds
+* The second query will take about ten seconds (creates [this file](https://github.com/Psychobagger/CS540_Project/blob/main/misc/contours_analysis2.csv))
 * The third query will take about half a second
 * The last query will take about a minute
 * ***Total time of queries (for my PC and for just two ZIP codes): about 20 minutes***
