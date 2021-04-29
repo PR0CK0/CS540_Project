@@ -14,6 +14,8 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/contours.PNG)
 
 ## Step 1 - Getting the Elevation/Contour Data
+If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. Otherwise, read on.
+
 Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught (new vector layer). There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
 * Click the Processing tab up top
@@ -29,7 +31,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
 ## Step 2 - Queries
-Download the .sql file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download my parcel table (*called parcel_elev.csv.zip*), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). You'll basically duplicate your own parcel table, but it saves you the query time. The csv file may look empty in the elevation column, but it's because only 5000-ish parcels exist in those two zip codes.
+Download the .sql file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download my parcel table (**called parcel_elev.csv.zip**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). You'll basically duplicate your own parcel table, but it saves you the query time. The csv file may look empty in the elevation column, but it's because only 5000-ish parcels exist in those two zip codes.
 
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
