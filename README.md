@@ -17,6 +17,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 
 ## Note
 * **ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... all others ignored for time. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
+* I've been running it for all ZIPs and let's just say that it takes a while... Hopefully I can post here soon
 * **ENSURE YOU SWITCH TO 'IMPORT' (NOT EXPORT) WHEN IMPORTING A CSV FOR A TABLE, THEN CHECK 'HEADER' SO THE COLUMN NAMES ARE IMPORTED TOO**
 
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/import.PNG)
