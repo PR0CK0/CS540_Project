@@ -51,8 +51,8 @@ Now we go onto the detailed steps of reproducing my work... remember, you don't 
 ## Step 1 - Getting the Elevation/Contour Data
 If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. 
 
-* drop table if exists volusia.contours;
-* create table volusia.contours (objectid bigint, geom geometry, elev integer);
+* `drop table if exists volusia.contours;`
+* `create table volusia.contours (objectid bigint, geom geometry, elev integer);`
 
 If you did this, skip to Step 2. Otherwise, read on for the full process of getting and loading the contours file from the Volusia site.
 
