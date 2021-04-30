@@ -28,7 +28,7 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * PGAdmin makes you create a table first, so run the following two commands in PGAdmin
 * `drop table if exists volusia.contours_analysis2;`
 * `create table volusia.contours_analysis2 (parid double precision, elev integer);`
-* Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import it
+* Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import the csv
 * Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\parcel_elev.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
 * Done
 
