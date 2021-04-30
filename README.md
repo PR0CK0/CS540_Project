@@ -33,14 +33,14 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * Done
 
 This table has two columns: parid, elevation. You add the columns to other tables yourself, equating on parid. For instance, if I wanted to add the elevation column to the sales_analysis table, I would do:
-`
+```
 alter table volusia.sales_analysis add column parcel_elevation integer;
 
 update volusia.sales_analysis s 
 set parcel_elevation = c.elev 
 from volusia.contours_analysis2 c
 where s.parid = c.parid;
-`
+```
 
 Now we go onto the detailed steps of reproducing my work... remember, you don't have to do this unless you want other ZIP codes.
 
