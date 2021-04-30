@@ -27,6 +27,7 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * Download my parcel table (**called parcel_elev.csv.zip**)
 * PGAdmin makes you create a table first, so run [this create table statement in your volusia schema](https://github.com/Psychobagger/CS540_Project/blob/main/create_table.sql)
 * Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import it
+* Optionally, use this command to "import": `COPY volusia.parcel_elev FROM 'C:\...\parcel_elev.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
 * Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
 * Done
 
