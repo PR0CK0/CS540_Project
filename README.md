@@ -32,6 +32,9 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\contours_analysis2.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
 * Done
 
+![Elevation table sample](https://github.com/Psychobagger/CS540_Project/blob/main/media/sample.PNG)
+
+
 This table has two columns: parid, elevation. You add the columns to other tables yourself, equating on parid. For instance, if I wanted to add the elevation column to the sales_analysis table, I would do:
 ```
 alter table volusia.sales_analysis add column parcel_elevation integer;
