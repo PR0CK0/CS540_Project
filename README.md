@@ -70,8 +70,6 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 
 * The first query will take about 45 minutes
 * The second query will take about 20 minutes (creates [this file](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv))
-* The third query will take about half a second
-* The last query will take about ten seconds
 * ***Total time of queries (for my PC and for just two ZIP codes): about an hour***
 
 NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run anything. Just download the **parcel_elev** table, and let that act as your parcel table for your experiments.
