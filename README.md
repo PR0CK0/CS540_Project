@@ -52,6 +52,8 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 * Scroll down and click Run
 * Go to PGAdmin and refresh the volusia schema; the contours table should be there
 
+![Exporting contours layer to PGAdmin](https://i2.wp.com/freegistutorial.com/wp-content/uploads/2018/08/export-layer-to-postgis.gif)
+
 ## Step 2 - Queries
 Download the **queries.sql** file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download my parcel table (**called parcel_elev.csv.zip**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). You'll basically duplicate your own parcel table, but it saves you the query time. The csv file may look empty in the elevation column, but it's because only 17000-ish parcels exist in those two zip codes.
 
