@@ -21,7 +21,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/import.PNG)
 
-## Easy Method
+## -- THE EASY WAY --
 If you only care about ZIP codes 32114 and 32118, just do the following:
 
 * Download my parcel table (**called parcel_elev.csv.zip**)
