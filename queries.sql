@@ -34,21 +34,4 @@ from volusia.contours_analysis ca inner join
   group by parid
 ) t
 on ca.parid = t.parid and ca.parcel_elevation_contour_distance = t.min_distance;
--- END FIRST QUERY --
-
-
-
--- RUN THIS THIRD --
--- Adds the needed column to the parcel table
-alter table volusia.parcel add column parcel_elevation integer;
--- END THIRD QUERY --
-
-
-
--- RUN THIS LAST --
--- Updates the parcel table with elevation numbers
-update volusia.parcel p 
-set parcel_elevation = c.elev 
-from volusia.contours_analysis2 c
-where p.parid = c.parid;
--- END LAST QUERY --
+-- END SECOND QUERY --
