@@ -1,3 +1,5 @@
+drop table if exists volusia.parcel_elev;
+
 create table volusia.parcel_elev
 (parid double precision, taxyr double precision, rolltype text, acctype text, dorid text, alt_id text, luc text, luc_desc text, taxdist text, taxdist_desc text, nbhd text,
 nbhd_desc text, mararea text, mararea_desc text, aprland double precision, aprbldg double precision, aprtot double precision, newconst double precision, additions double precision, 
