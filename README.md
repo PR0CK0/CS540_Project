@@ -29,7 +29,7 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * `drop table if exists volusia.contours_analysis2;`
 * `create table volusia.contours_analysis2 (parid double precision, elev integer);`
 * Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import the csv
-* Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\parcel_elev.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
+* Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\contours_analysis2.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
 * Done
 
 This table has two columns: parid, elevation. You add the columns to other tables yourself, equating on parid. For instance, if I wanted to add the elevation column to the sales_analysis table, I would do:
