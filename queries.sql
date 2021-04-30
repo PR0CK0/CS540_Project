@@ -35,3 +35,37 @@ from volusia.contours_analysis ca inner join
 ) t
 on ca.parid = t.parid and ca.parcel_elevation_contour_distance = t.min_distance;
 -- END SECOND QUERY --
+
+
+
+
+
+-- IGNORE THIS, JUST TESTING
+-- This is another version of query 1 that promises better computational speed, it's from one of Lehr's announcements about looping in SQL
+update volusia.parcel_elev set parcel_elevation = null;
+
+DO
+LANGUAGE plpgsql
+$$
+DECLARE
+g1 geometry;
+rec RECORD;
+elev float;
+i int = 1;
+
+BEGIN
+	for rec in select parid, geom from volusia.parcel_elev
+		where parcel_elevation is NULL and geom IS NOT NULL loop
+		g1:=rec.geom;
+		
+		select into elev c.elev
+			from volusia.contours c
+			order by ST_SetSRID(c.geom, 2236) <->(ST_Centroid(ST_Transform(g1, 2236)))
+			limit 1;
+
+		update volusia.parcel_elev set parcel_elevation = elev where parid=rec.parid ;
+		RAISE NOTICE '% - set to % %', i, rec.parid, elev;
+		i=i+1;
+	END LOOP;
+End;
+$$;
