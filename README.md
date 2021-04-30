@@ -64,7 +64,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 ![Exporting contours layer to PGAdmin](https://i2.wp.com/freegistutorial.com/wp-content/uploads/2018/08/export-layer-to-postgis.gif)
 
 ## Step 2 - Queries
-Download the **queries.sql** file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download my parcel table (**called parcel_elev.csv.zip**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). You'll basically duplicate your own parcel table, but it saves you the query time. The csv file may look empty in the elevation column, but it's because only 17000-ish parcels exist in those two zip codes.
+Download the **queries.sql** file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download the final elevation table (**called contours_analysis2.csv**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). It saves you the query time, and you just have to join it to other tables yourself (scroll up). The csv file may look empty in the elevation column, but it's because only 17000-ish parcels exist in those two zip codes.
 
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
@@ -72,7 +72,7 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 * The second query will take about 20 minutes (creates [this file](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv))
 * ***Total time of queries (for my PC and for just two ZIP codes): about an hour***
 
-NOTE: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run anything. Just download the **parcel_elev** table, and let that act as your parcel table for your experiments.
+REMINDER: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run any of these. Just download the **contours_analysis2** table, and join it with other tables (scroll up).
 
 That's it. It's rather straightforward.
 
@@ -80,9 +80,9 @@ That's it. It's rather straightforward.
 Recall: you can do this right from the "easy method", skipping steps 2 and 3.
 
 * You have to have a geom column in the table you have the elevation column to be able to represent it in QGIS
-* If you're using it with your own parcel table (not my parcel_elev), then just replace the following 'parcel_elevs' with 'parcel'
+* Put whatever table you have the elevation column in (probably sales_analysis) in the following queries
 * Run the following: `select AddGeometryColumn ('volusia', 'PUT_TABLE_HERE', 'geom', 2236, 'MULTIPOLYGON', 2);`
 * And run this: `update volusia.PUT_TABLE_HERE a set geom = p.geom from volusia.gis_parcels p where a.parid=p.altkey;`
-* Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select parcel_elev. Right click the layer, go to properties. On Symbology do Graduated, for the symbol 'parcel_elevation'. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. You can specify a color graduation so it blends. 
+* Open QGIS and make sure you're connected to the server. Add a PostGIS layer and select the SQL table that has the elevation column you just updated with geom. Right click the layer, go to properties. On Symbology do Graduated, for the symbol 'parcel_elevation'. Enter values for the elevation column like 0-5, 6-10, 10-20 etc., and give them each a color. You can specify a color graduation so it blends. 
 
 ![QGIS map finished](https://github.com/Psychobagger/CS540_Project/blob/main/media/gis3.PNG)
