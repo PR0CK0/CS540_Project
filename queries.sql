@@ -41,6 +41,7 @@ on ca.parid = t.parid and ca.parcel_elevation_contour_distance = t.min_distance;
 
 
 -- IGNORE THIS, JUST TESTING
+-- AGAIN, IGNORE THIS ENTIRE QUERY (unless you are grading me or something lol)
 -- This is another version of query 1 that promises better computational speed, it's from one of Lehr's announcements about looping in SQL
 update volusia.parcel_elev set parcel_elevation = null;
 
