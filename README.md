@@ -22,7 +22,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/import.PNG)
 
-## -- THE EASY WAY (TAKES 30 SECONDS)--
+## Step 0 - THE EASY WAY (TAKES 30 SECONDS)
 If you only care about ZIP codes 32114 and 32118, just do the following:
 
 * Download my elevation table (**called contours_analysis2.csv**)
@@ -81,7 +81,9 @@ The number 2236 you see in the first query is GIS' SRID for multi-point lines, w
 * The second query will take about 20 minutes (creates [this file](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv))
 * ***Total time of queries (for my PC and for just two ZIP codes): about an hour***
 
-REMINDER: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run any of these. Just download the **contours_analysis2** table, and join it with other tables (scroll up).
+Now you have the **contours_analysis2** table, which has parid with elevation. You can join it with your other tables (scroll up to Step 0).
+
+REMINDER: If you only care about the ZIP codes 32114 and/or 32118, then you don't have to run any of these. Just download the **contours_analysis2** table, and join it with other tables (scroll up to Step 0).
 
 That's it. It's rather straightforward.
 
