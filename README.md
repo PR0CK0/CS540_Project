@@ -49,7 +49,12 @@ where s.parid = c.parid;
 Now we go onto the detailed steps of reproducing my work... remember, you don't have to do this unless you want other ZIP codes.
 
 ## Step 1 - Getting the Elevation/Contour Data
-If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. If you did this, skip to Step 2. Otherwise, read on.
+If you're lazy, just download the **contours.csv.zip** file in this Github, extract the CSV and make that a table in postgis with the table name contours. 
+
+* drop table if exists volusia.contours;
+* create table volusia.contours (objectid bigint, geom geometry, elev integer);
+
+If you did this, skip to Step 2. Otherwise, read on for the full process of getting and loading the contours file from the Volusia site.
 
 Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put the .shp file into QGIS like we are taught (new vector layer). There are some ways to get the contours layer into your SQL server, but since we already have QGIS open, follow these steps:
 
@@ -72,7 +77,7 @@ Download the **queries.sql** file and run the queries one after another in PGAdm
 
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
-* The first query will take about 45 minutes
+* The first query will take about 45 minutes (edit the ZIP codes in the where clause to get the ones you want)
 * The second query will take about 20 minutes (creates [this file](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv))
 * ***Total time of queries (for my PC and for just two ZIP codes): about an hour***
 
