@@ -31,7 +31,7 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
 * Done
 
-Or, just download [contours_analysis2.csv](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv), which is two columns: parid, elevation. Much smaller than the parcel table and you can join it yourself. Follow the above steps for creating a table beforehand so you can import it.
+Or, just download [contours_analysis2.csv](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv), which is two columns: parid, elevation. Much smaller than the parcel table and you add the columns yourself, equating on parid. Follow the above steps for creating a table beforehand so you can import it.
 
 Now we go onto the detailed steps of reproducing my work... remember, you don't have to do this unless you want other ZIP codes.
 
