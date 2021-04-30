@@ -24,14 +24,23 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 ## -- THE EASY WAY --
 If you only care about ZIP codes 32114 and 32118, just do the following:
 
-* Download my parcel table (**called parcel_elev.csv.zip**)
-* PGAdmin makes you create a table first, so run [this create table statement in your volusia schema](https://github.com/Psychobagger/CS540_Project/blob/main/create_table.sql)
+* Download my elevation table (**called contours_analysis2.csv**)
+* PGAdmin makes you create a table first, so run the following two commands in PGAdmin
+* `drop table if exists volusia.contours_analysis2;`
+* `create table volusia.contours_analysis2 (parid double precision, elev integer);`
 * Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import it
-* Optionally, use this command to "import": `COPY volusia.parcel_elev FROM 'C:\...\parcel_elev.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
-* Let this table act as your parcel table in your experiments (it's the same, just with an *elevation* column)
+* Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\parcel_elev.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
 * Done
 
-Or, just download [contours_analysis2.csv](https://github.com/Psychobagger/CS540_Project/blob/main/contours_analysis2.csv), which is two columns: parid, elevation. Much smaller than the parcel table and you add the columns yourself, equating on parid. Follow the above steps for creating a table beforehand so you can import it.
+This table has two columns: parid, elevation. You add the columns to other tables yourself, equating on parid. For instance, if I wanted to add the elevation column to the sales_analysis table, I would do:
+`
+alter table volusia.sales_analysis add column parcel_elevation integer;
+
+update volusia.sales_analysis s 
+set parcel_elevation = c.elev 
+from volusia.contours_analysis2 c
+where s.parid = c.parid;
+`
 
 Now we go onto the detailed steps of reproducing my work... remember, you don't have to do this unless you want other ZIP codes.
 
