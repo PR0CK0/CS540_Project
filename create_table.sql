@@ -5,3 +5,12 @@ create table volusia.parcel_elev
 nbhd_desc text, mararea text, mararea_desc text, aprland double precision, aprbldg double precision, aprtot double precision, newconst double precision, additions double precision, 
 deletions double precision, sasd double precision, nsasd double precision, stxbl double precision, nstxbl double precision, cotxbl double precision, citxbl double precision, 
 cra text, cur text, dtcreated text, naics text, naics_desc text, eqval double precision, penval double precision, livunit text, hx_flag text, parcel_elevation integer);
+
+
+
+
+
+drop table if exists volusia.contours_analysis2;
+
+create table volusia.contours_analysis2
+(parid double precision, elev integer);
