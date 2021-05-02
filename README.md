@@ -30,7 +30,7 @@ If you only care about ZIP codes 32114 and 32118, just do the following:
 * `drop table if exists volusia.contours_analysis2;`
 * `create table volusia.contours_analysis2 (parid double precision, elev integer);`
 * Import this csv to the volusia schema by right-clicking the new table (after refreshing), click Import/Export, make sure it's on 'Import', then check 'Header'; now import the csv
-* Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\contours_analysis2.csv' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);`
+* Optionally, use this command to "import": `COPY volusia.contours_analysis2 FROM 'C:\...\contours_analysis2.csv' WITH (FORMAT 'csv', DELIMITER E',', NULL '', HEADER);`
 * Done
 
 ![Elevation table sample](https://github.com/Psychobagger/CS540_Project/blob/main/media/sample.PNG)
