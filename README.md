@@ -73,7 +73,7 @@ Download this: http://maps.vcgov.org/gis/download/shpfiles/contours.zip. I put t
 ![Exporting contours layer to PGAdmin](https://i2.wp.com/freegistutorial.com/wp-content/uploads/2018/08/export-layer-to-postgis.gif)
 
 ## Step 2 - Queries
-Download the **queries.sql** file and run the queries one after another in PGAdmin - the SQL file is commented and it takes like 20 minutes, tops. Another way is to download the final elevation table (**called contours_analysis2.csv**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). It saves you the query time, and you just have to join it to other tables yourself (scroll up). The csv file may look empty in the elevation column, but it's because only 17000-ish parcels exist in those two zip codes.
+Download the **queries.sql** file and run the queries one after another in PGAdmin - the SQL file is commented. Another way is to download the final elevation table (**called contours_analysis2.csv**), put it in your volusia schema and you have all of the elevation numbers for the zip codes I chose (32114 and 32118). It saves you the query time, and you just have to join it to other tables yourself (scroll up). The csv file may look empty in the elevation column, but it's because only 17000-ish parcels exist in those two zip codes.
 
 The number 2236 you see in the first query is GIS' SRID for multi-point lines, which is what the contours are. That number shows up in my query because it acts like a cast for the centroid of the parcel, which is a lonlat, point SRID (4326). It's necessary to "cast" it so that the ST_Distance function works.
 
