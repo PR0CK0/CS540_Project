@@ -17,7 +17,7 @@ So I thought about it some more, and ended up reducing all the effort to a simpl
 
 ## Note
 * **ONLY 32114 AND 32118 ZIP CODES HAD ELEVATIONS POPULATED... all others ignored for time. RUN IT YOURSELF IF YOU NEED OTHER ZIP CODES.**
-* I've been running it for all ZIPs and let's just say that it takes a while... Hopefully I can post here soon
+* The reason only two zip codes were completed is because this is not a simple data set like many other students: each parcel must have its distance compared to nearly 40,000 elevation objects, whereas a project like [this](https://github.com/A-J-S97/CS540Project), which only have about 200 objects to check distance against. In other words: it is computationally infeasible to do more than a few ZIP codes each time with my project. You must build them as you need them.
 * **ENSURE YOU SWITCH TO 'IMPORT' (NOT EXPORT) WHEN IMPORTING A CSV FOR A TABLE, THEN CHECK 'HEADER' SO THE COLUMN NAMES ARE IMPORTED TOO**
 
 ![QGIS contours](https://github.com/Psychobagger/CS540_Project/blob/main/media/import.PNG)
