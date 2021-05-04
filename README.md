@@ -3,7 +3,7 @@
 
 For Professor Lehr, ERAU Daytona Spring 2021. 
 
-[Here's](https://github.com/Psychobagger/CS540_Project/blob/main/PROCKOT_CS540_volusia_county_elevations_gis.pdf) the PDF file.
+[Here's](https://github.com/Psychobagger/CS540_Project/blob/main/PROCKOT_CS540_volusia_elevations_gis.pdf) the PDF file.
 
 ## **Finding the elevation of each parcel in Volusia County FL, using GIS.**
 
